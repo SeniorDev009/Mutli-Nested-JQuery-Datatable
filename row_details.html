@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Child Rows">
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="css/font/font-fileuploader.css" rel="stylesheet">
+    
+    
+    <!-- styles -->
+    <link href="css/jquery.fileuploader.min.css" media="all" rel="stylesheet">
+    
+    
+    <style>
+        table {
+            border: 2px solid;
+            border-bottom: 2px solid! important;
+        }
+        th {
+            line-height: 1;
+            border-bottom: 0px! important;
+            background-color: rgb(189, 189, 189);
+        }
+        td, th {
+            border-left: 2px solid;
+        }
+        td:first-child, th:first-child {
+            border-left: 0px! important;
+        }
+        
+        td.details-control {
+            text-align:center;
+            cursor: pointer;
+        }
+        tr.shown td.details-control {
+            text-align:center; 
+        }
+        .modal-header {
+            padding: 0.5rem 1rem;
+        }
+        .modal-body {
+            padding-bottom: 1px;
+        }
+        .modal-footer {
+            border-top: 0px;
+            padding: 1rem;
+            display: block;
+        }
+        body {
+            font-size: 0.9rem;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            line-height: normal;
+            background-color: #fff;
+
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .fileuploader {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="margin-top:5vw">Datatable</h2>
+        <p>Child rows (show extra / detailed information )</p>   
+        <table width="100%" class="display table table-striped" id="example">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Event Code</th>
+                    <th>Event Description</th>
+                    <th>Username</th>
+                    <th>Time logged</th>
+                </tr>
+            </thead>
+        </table>
+        <!-- Begin Add Note Modal -->
+        <div class="modal fade" id="addNoteModal" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h6 class="modal-title">Add New Note</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Note Name </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="noteName" name="noteName">
+                            </div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-md-3">
+                                <label>Note Content </label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="5" id="noteContent" name="noteContent"></textarea>
+                            </div>
+                            <input type="hidden" class="key" value="EventNotes">
+                            <input type="hidden" class="p_order">
+                            <input type="hidden" class="eventID">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 70px;" id="addNote">Save</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm float-right" style="width: 70px;" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <!-- Begin File upload Modal -->
+        <div class="modal fade" id="uploadFileModal" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h6 class="modal-title">File Upload</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>File Name </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="fileName" name="fileName">
+                            </div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-md-3">
+                                <label>File Select </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="files" id="myfiles">
+                            </div>
+                            <input type="hidden" name="fileSelect" id="fileSelect">
+                            <input type="hidden" class="key" value="EventFiles">
+                            <input type="hidden" class="p_order">
+                            <input type="hidden" class="eventID">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 70px;" id="addFile">Save</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm float-right" style="width: 70px;" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <!-- Begin Edit Note Modal -->
+        <div class="modal fade" id="editNoteModal" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h6 class="modal-title">Edit Note</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="/" class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Note Name </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="noteName" name="noteName">
+                            </div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-md-3">
+                                <label>Note Content </label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="5" id="noteContent" name="noteContent"></textarea>
+                            </div>
+                            <input type="hidden" class="key" value="EventNotes">
+                            <input type="hidden" class="p_order">
+                            <input type="hidden" class="order">
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 70px;" id="editNote">Save</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm float-right" style="width: 70px;" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <!-- Begin Edit File Modal -->
+        <div class="modal fade" id="editFileModal" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h6 class="modal-title">Edit File</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="/" class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>File Name </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="fileName" name="fileName">
+                            </div>
+                            <input type="hidden" class="key" value="EventFiles">
+                            <input type="hidden" class="order">
+                            <input type="hidden" class="p_order">
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 70px;" id="editFile">Save</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm float-right" style="width: 70px;" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <script src="js/tableInit.js"></script>
+    <script src="js/handleJSON.js"></script>
+    <!-- file upload js -->
+    <script src="js/jquery.fileuploader.min.js" type="text/javascript"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+</body>
+</html>

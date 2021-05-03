@@ -1,0 +1,194 @@
+[
+    {
+       "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+       "EventArea":1,
+       "EventType":2,
+       "EventAreaName":"EVN",
+       "EventTypeName":"TIL",
+       "EventCode":"EVN-TIL-123-5678",
+       "EventTitle":"EVENT TITLE",
+       "CreatedByFirstName":"John",
+       "CreatedByLastName":"Doe",
+       "FullName":"John D.",
+       "LoggedTime":"\/Date(1615449730207)\/",
+       "Timestamp":"3\/11\/2021 12:02:10 AM",
+       "EventNotes":[
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventNoteId":"17cf84c8-2f84-48a8-b1a5-01299b1100e2",
+             "NoteTitle":"Test Note",
+             "NoteContent":"Note 2",
+             "NoteLoggedTime":"\/Date(1618109188647)\/",
+             "NoteTimestamp":"4\/10\/2021 7:46:28 PM",
+             "LoggedByFirstName":"John",
+             "LoggedByLastName":"Doe",
+             "FullName":"John D.",
+             "EditedTimestamp":null,
+             "EditedByName":null
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventNoteId":"6502c2f6-e1e0-4aec-adf9-b98a6c34929e",
+             "NoteTitle":"Test Note",
+             "NoteContent":"Note 1",
+             "NoteLoggedTime":"\/Date(1618109188410)\/",
+             "NoteTimestamp":"4\/10\/2021 7:46:28 PM",
+             "LoggedByFirstName":"John",
+             "LoggedByLastName":"Doe",
+             "FullName":"John D.",
+             "EditedTimestamp":"4\/11\/2021 7:46:28 PM",
+             "EditedByName":"Jane D."
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventNoteId":"6d89866b-1644-4263-8f23-741e24fa8487",
+             "NoteTitle":"Update 1",
+             "NoteContent":"d",
+             "NoteLoggedTime":"\/Date('1619474679881')\/",
+             "NoteTimestamp":"4\/26\/2021, 03:04:39 PM",
+             "LoggedByFirstName":"Adam",
+             "LoggedByLastName":"S",
+             "FullName":"Adam S.",
+             "EditedTimestamp":"4\/26\/2021, 03:04:55 PM",
+             "EditedByName":"Adam S"
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventNoteId":"ca06ea2f-1d45-4565-98e5-9188b2381718",
+             "NoteTitle":"update Note 1",
+             "NoteContent":"Hi Ryan,\nHow's your day?",
+             "NoteLoggedTime":"\/Date('1619474912736')\/",
+             "NoteTimestamp":"4\/26\/2021, 03:08:32 PM",
+             "LoggedByFirstName":"Adam",
+             "LoggedByLastName":"S",
+             "FullName":"Adam S.",
+             "EditedTimestamp":"4\/26\/2021, 03:09:03 PM",
+             "EditedByName":"Adam S"
+          }
+       ],
+       "EventFiles":[
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventFileId":"9fb265b2-85eb-4861-bfb0-81da1c2db761",
+             "FileName":"Test File",
+             "UploadedTime":"\/Date(1618109528320)\/",
+             "UploadedTimestamp":"4\/10\/2021 7:52:08 PM",
+             "UploadedByFirstName":"John",
+             "UploadedByLastName":"Doe",
+             "FullName":"John D.",
+             "FileURL":null,
+             "EditedTimestamp":"4\/11\/2021 7:46:28 PM",
+             "EditedByName":"Jane D."
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventFileId":"9fb265b2-85eb-4861-bfb0-81da1c2db761",
+             "FileName":"Test File",
+             "UploadedTime":"\/Date(1618109528320)\/",
+             "UploadedTimestamp":"4\/10\/2021 7:52:08 PM",
+             "UploadedByFirstName":"John",
+             "UploadedByLastName":"Doe",
+             "FullName":"John D.",
+             "FileURL":null,
+             "EditedTimestamp":null,
+             "EditedByName":null
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventFileId":"6cb014dc-7c50-4300-9bc3-d820083eeba3",
+             "FileName":"dfdsf",
+             "FileURL":"\/uploads\/innostudio.de_d7e209c7a245d2eef8f6acea3375468f.jpg",
+             "UploadedTime":"\/Date('1619474716497')\/",
+             "UploadedTimestamp":"4\/26\/2021, 03:05:16 PM",
+             "UploadedByFirstName":"Adam",
+             "UploadedByLastName":"S",
+             "FullName":"Adam S.",
+             "EditedTimestamp":null,
+             "EditedByName":null
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventFileId":"2765c374-46dd-4a22-b5bd-ef810c7f8ee3",
+             "FileName":"update title",
+             "FileURL":"\/uploads\/innostudio.de_6f084c5baa683aaff45401436c4654fb.jpg",
+             "UploadedTime":"\/Date('1619474979455')\/",
+             "UploadedTimestamp":"4\/26\/2021, 03:09:39 PM",
+             "UploadedByFirstName":"Adam",
+             "UploadedByLastName":"S",
+             "FullName":"Adam S.",
+             "EditedTimestamp":"4\/26\/2021, 03:10:01 PM",
+             "EditedByName":"Adam S"
+          }
+       ]
+    },
+    {
+       "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b759",
+       "EventArea":1,
+       "EventType":2,
+       "EventAreaName":"EVN",
+       "EventTypeName":"TIL",
+       "EventCode":"EVN-TIL-123-5678",
+       "EventTitle":"EVENT TITLE",
+       "CreatedByFirstName":"John",
+       "CreatedByLastName":"Doe",
+       "FullName":"John D.",
+       "LoggedTime":"\/Date(1615449730207)\/",
+       "Timestamp":"3\/11\/2021 12:02:10 AM",
+       "EventNotes":[
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b759",
+             "EventNoteId":"17cf84c8-2f84-48a8-b1a5-01299b1100e2",
+             "NoteTitle":"Test Note",
+             "NoteContent":"Note 2",
+             "NoteLoggedTime":"\/Date(1618109188647)\/",
+             "NoteTimestamp":"4\/10\/2021 7:46:28 PM",
+             "LoggedByFirstName":"John",
+             "LoggedByLastName":"Doe",
+             "FullName":"John D.",
+             "EditedTimestamp":null,
+             "EditedByName":null
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b759",
+             "EventNoteId":"6502c2f6-e1e0-4aec-adf9-b98a6c34929e",
+             "NoteTitle":"Test Note",
+             "NoteContent":"Note 1",
+             "NoteLoggedTime":"\/Date(1618109188410)\/",
+             "NoteTimestamp":"4\/10\/2021 7:46:28 PM",
+             "LoggedByFirstName":"John",
+             "LoggedByLastName":"Doe",
+             "FullName":"John D.",
+             "EditedTimestamp":"4\/11\/2021 7:46:28 PM",
+             "EditedByName":"Jane D."
+          }
+       ],
+       "EventFiles":[
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventFileId":"9fb265b2-85eb-4861-bfb0-81da1c2db761",
+             "FileName":"Test File",
+             "UploadedTime":"\/Date(1618109528320)\/",
+             "UploadedTimestamp":"4\/10\/2021 7:52:08 PM",
+             "UploadedByFirstName":"John",
+             "UploadedByLastName":"Doe",
+             "FullName":"John D.",
+             "FileURL":null,
+             "EditedTimestamp":"4\/11\/2021 7:46:28 PM",
+             "EditedByName":"Jane D."
+          },
+          {
+             "EventLogId":"bdce59d5-aa87-4999-ae14-dd86a733b758",
+             "EventFileId":"9fb265b2-85eb-4861-bfb0-81da1c2db769",
+             "FileName":"Test File",
+             "UploadedTime":"\/Date(1618109528320)\/",
+             "UploadedTimestamp":"4\/10\/2021 7:52:08 PM",
+             "UploadedByFirstName":"John",
+             "UploadedByLastName":"Doe",
+             "FullName":"John D.",
+             "FileURL":null,
+             "EditedTimestamp":null,
+             "EditedByName":null
+          }
+       ]
+    }
+ ]
